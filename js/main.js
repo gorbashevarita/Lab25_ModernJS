@@ -1,5 +1,5 @@
-console.log("\n=== Деструктуризация массивов ===");
-const colors = ["red", "green", "blue"];
+// console.log("\n=== Деструктуризация массивов ===");
+// const colors = ["red", "green", "blue"];
 // const colors1 = colors[0];
 // const colors2 = colors[1];
 // console.log(colors1, colors2);
@@ -144,18 +144,18 @@ const colors = ["red", "green", "blue"];
 // console.log(cube(3));
 // console.log(E);
 
-console.log("Промисы");
-const simplePromise = new Promise((resolve, reject) => {
-    const success = true;
-    if (success) {
-        resolve("Операция выполнена успешно!");
-    } else {
-        reject("Произошла ошибка!");
-    }
-});
-simplePromise
-    .then((result) => console.log("Результат: ", result))
-    .catch((error) => console.log("Ошибка: ", error));
+// console.log("Промисы");
+// const simplePromise = new Promise((resolve, reject) => {
+//     const success = true;
+//     if (success) {
+//         resolve("Операция выполнена успешно!");
+//     } else {
+//         reject("Произошла ошибка!");
+//     }
+// });
+// simplePromise
+//     .then((result) => console.log("Результат: ", result))
+//     .catch((error) => console.log("Ошибка: ", error));
 
 function delay(ms) {
     return new Promise((resolve) => {
@@ -164,69 +164,166 @@ function delay(ms) {
         }, ms)
     });
 }
-delay(1000)
-    .then((message) => console.log(message))
+// delay(1000)
+//     .then((message) => console.log(message))
 
 
-function fetchUserData(userId) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (userId > 0) {
-        resolve({
-          id: userId,
-          name: "Иван Иванов",
-          email: "ivan@example.com",
-        });
-      } else {
-        reject("Неверный ID пользователя");
-      }
-    }, 1500);
-  });
-}
-fetchUserData(1)
-    .then((user) => console.log("Пользователь: ", user))
-    .catch((error) => console.log("Ошибка: ", error));
+// function fetchUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (userId > 0) {
+//         resolve({
+//           id: userId,
+//           name: "Иван Иванов",
+//           email: "ivan@example.com",
+//         });
+//       } else {
+//         reject("Неверный ID пользователя");
+//       }
+//     }, 1500);
+//   });
+// }
+// fetchUserData(1)
+//     .then((user) => console.log("Пользователь: ", user))
+//     .catch((error) => console.log("Ошибка: ", error));
 
-function step1() {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve("Шаг 1 завершён"), 500);
-  });
-}
+// function step1() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve("Шаг 1 завершён"), 500);
+//   });
+// }
 
-function step2(previousResult) {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(`${previousResult} -> Шаг 2 завершён`), 500);
-  });
-}
+// function step2(previousResult) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(`${previousResult} -> Шаг 2 завершён`), 500);
+//   });
+// }
 
-function step3(previousResult) {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(`${previousResult} -> Шаг 3 завершён`), 500);
-  });
-}
+// function step3(previousResult) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(`${previousResult} -> Шаг 3 завершён`), 500);
+//   });
+// }
 
-step1()
-  .then((result1) => step2(result1))
-  .then((result2) => step3(result2))
-  .then((finalResult) => console.log("Финальный результат:", finalResult))
-  .catch((error) => console.log("Ошибка в цепочке:", error));
+// step1()
+//   .then((result1) => step2(result1))
+//   .then((result2) => step3(result2))
+//   .then((finalResult) => console.log("Финальный результат:", finalResult))
+//   .catch((error) => console.log("Ошибка в цепочке:", error));
 
 
-console.log("Скрипт запущен — начинаем выполнение");
+// console.log("Скрипт запущен — начинаем выполнение");
 
-const checkInventory = new Promise((resolve, reject) => {
-    const product = true;
-    if (product) {
-        resolve("Продукт есть");
-    } else {
-        reject("Продукта нет");
-    }
-});
+// const checkInventory = new Promise((resolve, reject) => {
+//     const product = true;
+//     if (product) {
+//         resolve("Продукт есть");
+//     } else {
+//         reject("Продукта нет");
+//     }
+// });
 
-checkInventory
-    .then((result) => {
-        console.log("Результат: ", result);
-    })
-    .catch((error) => {
-        console.log("Результат: ", error);
-    });
+// checkInventory
+//     .then((result) => {
+//         console.log("Результат: ", result);
+//     })
+//     .catch((error) => {
+//         console.log("Результат: ", error);
+//     });
+
+// console.log("Async/Await");
+// async function greet() {
+//   return "Привет!";
+// }
+// greet().then((message) => console.log(message));
+
+// function getWeather() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => { resolve({temp: 22, condition: "Солнечно" }); }, 1000);
+//   });
+// }
+
+// async function showWeather() {
+//   console.log("Загрузка погоды...");
+//   const weather = await getWeather();
+//   console.log(`Температура: ${weather.temp}°C, ${weather.condition}`);
+// }
+// showWeather();
+
+// async function fetchData(showldFail) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (showldFail) {
+//         reject("Ошибка при загрузке данных");
+//       } else {
+//         resolve({ dsta: "Важные данные" });
+//       }
+//     }, 800);
+//   });
+// }
+
+// async function getData() {
+//   try {
+//     const result = await fetchData(false);
+//     console.log("Успешно:", result.data);
+
+//     const failedResult = await fetchData(true);
+//     console.log("Это не выполнется");
+//   } catch (error) {
+//     console.log("Поймана ошибка:", error);
+//   }
+// }
+// getData();
+
+// async function cookDinner() {
+//   console.log("Начинаем готовить...");
+
+//   const pasta = await DelayNode(1000).then(() => "Паста готова");
+//   console.log(pasta);
+
+//   const sause = await DelayNode(500).then(() => "Соус готов");
+
+//   const salad = await DelayNode(700).then(() => "Салат готов");
+//  }
+//  cookDinner().then((result) => console.log(result));
+
+//  async function cookDinnerFast() {
+//   console.log("Готовим все одновременно...");
+
+//   const [pasta, sause, salad] = await Promise.all([
+//     delay(1000).then(() => "Паста готова"),
+//     delay(500).then(() => "Соус готов"),
+//     delay(700).then(() => "Салат готов"),
+//   ]);
+//   console.log(pasta, sause, salad);
+//   return "Ужин готов быстрее!";
+//  }
+
+//  cookDinnerFast().then((result) => console.log(result));
+
+ async function processOrder () {
+  try {
+    console.log("Ваш заказ проходит этапы: ")
+
+    await delay(1000);
+    console.log("Проверка наличия товара завершена");
+
+    await delay(500);
+    console.log("Расчет стоимости товара закончен");
+
+    await delay(600);
+    console.log("Подстверждение товара закончено");
+
+    return "Заказ успешно обработан!"
+  }
+  catch(error) {
+    console.error("Произошла ошибка при обработке заказа: ", error.message)
+    throw error;
+  }
+ }
+
+processOrder()
+  .then((result) => console.log(result))
+  .catch((error) => console.log("Заказ не обработан:", error.message));
+
+ 
