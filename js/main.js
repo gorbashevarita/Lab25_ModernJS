@@ -13,8 +13,8 @@
 
 // console.log("Деструктуризация объектов");
 // const user = {
-//     name: "Алиса", 
-//     age: 25, 
+//     name: "Алиса",
+//     age: 25,
 //     city: "Москва",
 // }
 
@@ -46,9 +46,9 @@
 // printUser(user);
 
 // const product = {
-//     name: "кулич", 
+//     name: "кулич",
 //     price: "200p",
-//     category: "выпечка", 
+//     category: "выпечка",
 //     inStock: "да"
 // }
 // const {name, price, category, inStock} = product;
@@ -61,14 +61,6 @@
 //     console.log(`inStock: ${inStock}`);
 // }
 // printProduct(product);
-
-
-
-
-
-
-
-
 
 // console.log("Spread для массивов");
 // const arr1 = [1, 2, 3];
@@ -110,21 +102,15 @@
 // console.log(findMax(1, 2, 3, 4, 80, 5));
 
 // const object1 = {
-//     name: "Ruta", 
+//     name: "Ruta",
 //     age: 18
 // };
 // const object2 = {
-//     city: "Volzhski", 
+//     city: "Volzhski",
 //     hobbi: "read"
 // };
 // const object3 = {...object1, ...object2};
 // console.log(object3);
-
-
-
-
-
-
 
 // import {greet, add, PI} from "./utils.js";
 // console.log("Модули");
@@ -166,7 +152,6 @@
 // }
 // delay(1000)
 //     .then((message) => console.log(message))
-
 
 // function fetchUserData(userId) {
 //   return new Promise((resolve, reject) => {
@@ -210,7 +195,6 @@
 //   .then((result2) => step3(result2))
 //   .then((finalResult) => console.log("Финальный результат:", finalResult))
 //   .catch((error) => console.log("Ошибка в цепочке:", error));
-
 
 // console.log("Скрипт запущен — начинаем выполнение");
 
@@ -326,12 +310,6 @@
 //   .then((result) => console.log(result))
 //   .catch((error) => console.log("Заказ не обработан:", error.message));
 
- 
-
-
-
-
-
 // console.log("Fetch API");
 
 // async function getUsers() {
@@ -365,28 +343,169 @@
 // }
 // getUserById(1);
 
-async function createPost() {
-  try {
-    const newPost = {
-      title: "Моя первая запись",
-      body: "Это содержание моей первой записи в блоге",
-      userId: 1
-    };
+// async function createPost() {
+//   try {
+//     const newPost = {
+//       title: "Моя первая запись",
+//       body: "Это содержание моей первой записи в блоге",
+//       userId: 1
+//     };
 
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newPost)
-    });
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(newPost)
+//     });
 
-    const createdPost = await response.json();
-    console.log("Создана новая запись:");
-    console.log("ID:", createdPost.id);
-    console.log("Заголовок:", createdPost.title);
-  } catch (error) {
-    console.log("Ошибка при создании записи:", error.message);
-  }
-}
- createPost();
+//     const createdPost = await response.json();
+//     console.log("Создана новая запись:");
+//     console.log("ID:", createdPost.id);
+//     console.log("Заголовок:", createdPost.title);
+//   } catch (error) {
+//     console.log("Ошибка при создании записи:", error.message);
+//   }
+// }
+//  createPost();
+
+// console.log("Optional Chaining");
+
+// const user1 = {
+//   name: "Андрей",
+//   address: {
+//     city: "Волжский",
+//     street: "Пушкина",
+//   },
+// };
+// const user2 = {
+//   name: "Дмитрий",
+// };
+//  const city1 = user2.address && user2.address.city;
+//  console.log("Город (старый способ):", city1);
+
+// const city2 = user2.address?.city;
+// console.log("Город (новый способ):", city2);
+
+// const street = user1.address?.street;
+// console.log("Улица:", street);
+
+// const admin = {
+//   name: "Администратор",
+//   permission: {
+//     canDelete: () => true,
+//   },
+// };
+// const guest = {
+//   name: "Гость",
+// };
+// console.log("Админ может удалять?", admin.permission?.canDelete?.());
+// console.log("Гость может удалять?", guest.permission?.canDelete?.());
+
+// const company = {
+//   name: "Tech Corp",
+//   employees: [
+//     { name: "Надежда", role: "Developer" },
+//     { name: "Анна", role: "Designer" }
+//   ]
+// };
+
+// const startup = {
+//   name: "New Startup"
+// };
+
+// console.log("Первый сотрудник:", company.employees?.[0]?.name);
+// console.log("Первый сотрудник стартапа:", startup.employees?.[0]?.name);
+
+// console.log("Nullish Coalescing");
+// const value1 = 0;
+// const value2 = "";
+// const value3 = false;
+// const value4 = null;
+// const value5 = undefined;
+
+// console.log('value1 || "default":', value1 || "default");
+// console.log('value2 || "default":', value2 || "default");
+// console.log('value3 || "default":', value3 || "default");
+
+// console.log('value1 ?? "default":', value1 ?? "default");
+// console.log('value2 ?? "default":', value2 ?? "default");
+// console.log('value3 ?? "default":', value3 ?? "default");
+// console.log('value4 ?? "default":', value4 ?? "default");
+// console.log('value5 ?? "default":', value5 ?? "default");
+
+// function displayUserSettings(settings) {
+//   const theme = settings?.theme ?? "light";
+//   const fontSize = settings?.fontSize ?? 14;
+//   const notifications = settings?.notifications ?? true;
+
+//   console.log("Настройка пользователя: ");
+//   console.log("Тема: ", theme);
+//   console.log("Размер шрифта: ", fontSize);
+//   console.log("Уведомления: ", notifications);
+
+//   displayUserSettings({theme: "dark", fontSize: 16});
+//   displayUserSettings({notifications: false});
+//   displayUserSettings({});
+//}
+
+// const apiResponse = {
+//     data: {
+//         user: {
+//             profile: {
+//                 settings: {
+//                     languege: "ru",
+//                 },
+//             },
+//         },
+//     },
+// };
+
+// const language = apiResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык:", language);
+
+// const emptyResponse = {};
+// const defaultLanguage = emptyResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык по умолчанию:", defaultLanguage);
+
+const order = {
+  customer: {
+    name: "Иван Иванов",
+    email: "ivan@example.com",
+    phone: "+7 (999) 123-45-67",
+  },
+  shipping: {
+    address: "г. Москва, ул. Ленина, д. 15, кв. 23",
+    method: "курьерская доставка",
+    date: "2023-12-25",
+  },
+  payment: {
+    type: "карта",
+    status: "оплачен",
+  },
+};
+
+const customerName = order?.customer?.name ?? "Не указано";
+const customerEmail = order?.customer?.email ?? "Не указано";
+const customerPhone = order?.customer?.phone ?? "Не указано";
+
+const shippingAddress = order?.shipping?.address ?? "Не указан";
+const shippingMethod = order?.shipping?.method ?? "Не указана";
+const shippingDate = order?.shipping?.date ?? "Не указана";
+
+const paymentType = order?.payment?.type ?? "Не указан";
+const paymentStatus = order?.payment?.status ?? "Не указан";
+
+console.log("=== ИНФОРМАЦИЯ О ЗАКАЗЕ ===");
+console.log(`Покупатель: ${customerName}`);
+console.log(`Email: ${customerEmail}`);
+console.log(`Телефон: ${customerPhone}`);
+console.log("--- Доставка ---");
+console.log(`Адрес: ${shippingAddress}`);
+console.log(`Способ: ${shippingMethod}`);
+console.log(`Дата: ${shippingDate}`);
+console.log("--- Оплата ---");
+console.log(`Тип: ${paymentType}`);
+console.log(`Статус: ${paymentStatus}`);
+
+displayOrder(order);
