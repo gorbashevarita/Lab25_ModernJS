@@ -8,8 +8,10 @@
 </head>
 <body>
     <h1>💸--- КОНВЕРТЕР ВАЛЮТ ---💸</h1>
-    <div>
-        <input type="number" placeholder="Введите сумму для конвертирования" required>
+    <div class="main">
+
+        <div class="input">
+            <input type="number" placeholder="Введите сумму для конвертирования" required>
         <select required>
           <option value="" disabled selected>-- Выберите валюту --</option>
           <option value="USD">USD — Доллар США</option>
@@ -19,8 +21,14 @@
           <option value="RUB">RUB — Российский рубль</option>
           <option value="CNY">CNY — Китайский юань</option>
         </select>
-        <button>Конвертировать</button>
-        <input type="number" placeholder="Конвертированная сумма...">
+        </div>
+
+        <div class="button-converter">
+            <button class="button-green">Конвертировать</button>
+        </div>
+
+        <div class="output">
+            <input type="number" placeholder="Конвертированная сумма..." readonly>
         <select required>
           <option value="" disabled selected>-- Выберите валюту --</option>
           <option value="USD">USD — Доллар США</option>
@@ -30,7 +38,12 @@
           <option value="RUB">RUB — Российский рубль</option>
           <option value="CNY">CNY — Китайский юань</option>
         </select>
-        <button>Очистить все данные</button>
+        </div>
+
+
+        <div class="button-clear">
+            <button class="button-red">Очистить</button>
+        </div>
     </div>
 </body>
 </html>
