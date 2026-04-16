@@ -11,8 +11,8 @@
     <div class="main">
 
         <div class="input">
-            <input type="number" placeholder="Введите сумму для конвертирования" required>
-        <select required>
+            <input type="number" id="input" placeholder="Введите сумму для конвертирования" required>
+        <select required id="currency_input">
           <option value="" disabled selected>-- Выберите валюту --</option>
           <option value="USD">USD — Доллар США</option>
           <option value="EUR">EUR — Евро</option>
@@ -24,12 +24,12 @@
         </div>
 
         <div class="button-converter">
-            <button class="button-green">Конвертировать</button>
+            <button class="button-green" id="button-green">Конвертировать</button>
         </div>
 
         <div class="output">
-            <input type="number" placeholder="Конвертированная сумма..." readonly>
-        <select required>
+            <input type="number" id="output" placeholder="Конвертированная сумма..." readonly>
+        <select required id="currency_output">
           <option value="" disabled selected>-- Выберите валюту --</option>
           <option value="USD">USD — Доллар США</option>
           <option value="EUR">EUR — Евро</option>
@@ -42,8 +42,10 @@
 
 
         <div class="button-clear">
-            <button class="button-red">Очистить</button>
+            <button class="button-red" id="button-red">Очистить</button>
         </div>
     </div>
+
+    <script src="converter.js"></script>
 </body>
 </html>
