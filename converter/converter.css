@@ -72,6 +72,7 @@ input[type="number"] {
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
+  background-color: #faebd7;
 }
 select {
   width: 100%;
